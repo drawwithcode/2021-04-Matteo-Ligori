@@ -1,43 +1,48 @@
-/*let s1 = function (p) {
-  p.setup = function () {
-    p.createCanvas(400, 400);
-    p.background("red");
-  };
-};
+let sfondo;
+let start;
+var input;
 
-let s2 = function (p) {
-  p.setup = function () {
-    p.createCanvas(400, 400);
-    p.background("green");
-  };
-};
-
-let p1 = new p5(s1);
-let p2 = new p5(s2);
-
-p1.draw = function () {
-  p1.ellipse(p1.mouseX, p1.mouseY, 20);
-  p1.fill("green");
-};
-
-p2.draw = function () {
-  p2.rect(p2.mouseX, p2.mouseY, 20);
-};
-*/
 const urlString = window.location.href;
 let url = new URL(urlString);
 
+function preload() {
+  sfondo = loadImage("./assets/sfondo-01.png");
+  titolo = loadImage("./assets/titolo.png");
+}
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  imageMode(CENTER);
+  background("powderblue");
+  start = createButton("Adopt!");
+  start.mouseClicked(goTo);
+
+  input = createInput("").attribute("placeholder", "    Type here");
 }
 
 function draw() {
-  background("powderblue");
+  image(sfondo, width / 2, height / 2, width, height);
+  image(titolo, width / 2, height / 2 - 180, 500, 205);
+
+  var testo = "Chose your alien nickname";
+  textFont("Lobster");
   textAlign(CENTER);
-  textSize(20);
-  text(frameCount, width / 2, height / 2);
+  textSize(25);
+  fill(255);
+  text(testo, width / 2 - 10, height / 2 - 40);
+
+  var myText = input.value();
+  if (input.value() == "") {
+    text("", width / 2, height / 2 + 50);
+  } else {
+    text(myText + "!", width / 2 - 10, height / 2 + 120);
+  }
+
+  storeItem("myText", myText);
 }
 
-function mouseClicked() {
-  window.open(url + "second-page.html?count=" + frameCount, "_self");
+function goTo() {
+  if (input.value() != "") {
+    window.open(url + "second-page.html?" + input.value(), "_self");
+  }
 }

@@ -2,15 +2,65 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Sketch</title>
 
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" />
 
     <script src="libraries/p5.min.js"></script>
     <script src="libraries/p5.sound.min.js"></script>
   </head>
+
+  <style>
+    h1 {
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+      font-size: 34px;
+      font-family: "Comfortaa";
+    }
+
+    input {
+      position: absolute;
+      width: 275px;
+      height: 30px;
+      top: 52%;
+      left: 50%;
+      background-color: rgb(116, 255, 142);
+      border: 5px solid rgb(250, 108, 251);
+      color: rgb(250, 108, 251);
+      border-radius: 30px;
+      transform: translate(-50%, -50%);
+      font-family: "Comfortaa";
+      font-size: 15pt;
+    }
+
+    button {
+      background-color: rgb(172, 101, 255);
+      border-radius: 15px;
+      position: absolute;
+      padding: 2px;
+      padding-left: 10px;
+      padding-right: 10px;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      color: rgb(63, 239, 255);
+      font-size: 21px;
+      font-family: "Comfortaa";
+    }
+
+    button:hover {
+      background-color: rgb(116, 255, 142);
+      color: white;
+    }
+  </style>
 
   <body>
     <script src="sketch.js"></script>
