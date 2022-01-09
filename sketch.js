@@ -17,7 +17,7 @@ function setup() {
   start = createButton("Adopt!");
   start.mouseClicked(goTo);
 
-  input = createInput("").attribute("placeholder", "    Type here");
+  input = createInput("").attribute("placeholder", "Type here");
 }
 
 function draw() {
@@ -25,17 +25,20 @@ function draw() {
   image(titolo, width / 2, height / 2 - 180, 500, 205);
 
   var testo = "Chose your alien nickname";
-  textFont("Lobster");
+  textFont("DM Sans");
   textAlign(CENTER);
   textSize(25);
   fill(255);
   text(testo, width / 2 - 10, height / 2 - 40);
 
+  textFont("Titan One");
+  textSize(35);
+
   var myText = input.value();
   if (input.value() == "") {
     text("", width / 2, height / 2 + 50);
   } else {
-    text(myText + "!", width / 2 - 10, height / 2 + 120);
+    text(myText + "!", width / 2 - 10, (height * 2) / 3);
   }
 
   storeItem("myText", myText);
