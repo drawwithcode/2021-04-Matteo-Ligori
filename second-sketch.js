@@ -1,16 +1,12 @@
-// initialize socket variable on client
-//const socket = io();
-
 let nome;
 let sfondo;
 //creo variabile alien, costituita da un array
 let alien = [];
 let mic;
 let level = 0;
-let livello = [];
 
-//const urlString = window.location.href;
-//let url = new URL(urlString);
+const urlString = window.location.href;
+let url = new URL(urlString);
 
 function preload() {
   sfondo = loadImage("./assets/sfondo-01.png");
@@ -30,7 +26,7 @@ function setup() {
   textAlign(CENTER);
   rectMode(CENTER);
   // richiamo l' item che ho immagazzinato precedentemente
-  //nome = getItem("myText");
+  nome = getItem("myText");
 }
 
 function draw() {
@@ -41,14 +37,7 @@ function draw() {
   textFont("Titan One");
   textSize(40);
   fill(255);
-  text("matteo", width / 2 - 100, 100);
-  textSize(30);
-  /*
-  let div = createDiv(nome);
-  div.style("font-size", "16px");
-*/
-  text("Livello:" + [level], width / 2 + 120, 100);
-  console.log(level);
+  text(nome, width / 2, 100);
 
   textFont("DM Sans");
 
@@ -85,13 +74,8 @@ function incremento() {
 
   if (vol > 95) {
     level = 2;
-    livello;
   }
   if (vol > 80 && vol < 95 && level < 2) {
     level = 1;
   }
 }
-
-socket.on("changeLevel", (message) => {
-  console.log("message:", message);
-});

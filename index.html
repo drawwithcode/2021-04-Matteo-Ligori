@@ -2,11 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>RUMO</title>
+    <title>Sketch</title>
 
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,10 +17,11 @@
     <script src="libraries/p5.min.js"></script>
     <script src="libraries/p5.sound.min.js"></script>
   </head>
+
   <style>
     h1 {
       position: absolute;
-      top: 82%;
+      top: 30%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
@@ -30,21 +29,47 @@
       font-size: 34px;
       font-family: "DM Sans";
     }
-    div {
+
+    input {
       position: absolute;
-      top: 85%;
+      width: 275px;
+      height: 30px;
+      top: 52%;
+      left: 50%;
+      padding-left: 15px;
+      background-color: rgb(116, 255, 142);
+      border: 5px solid rgb(250, 108, 251);
+      color: rgb(172, 101, 255);
+      border-radius: 20px;
+      transform: translate(-50%, -50%);
+      font-family: "DM Sans";
+      font-size: 15pt;
+    }
+
+    button {
+      background-color: rgb(172, 101, 255);
+      border-radius: 15px;
+      position: absolute;
+      padding: 2px;
+      padding-left: 10px;
+      padding-right: 10px;
+      top: 60%;
       left: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
+
+      color: rgb(63, 239, 255);
+      font-size: 21px;
+      font-family: "Titan One";
+    }
+
+    button:hover {
+      background-color: rgb(116, 255, 142);
       color: white;
-      font-family: "DM Sans";
     }
   </style>
+
   <body>
-    <h1>
-      Rumo is a species of alien that feed with noise, </br> 
-    make noise to feed him
-  </h1>
-    <script src="second-sketch.js"></script>
+    <script src="sketch.js"></script>
   </body>
 </html>
